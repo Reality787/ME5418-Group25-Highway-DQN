@@ -1,72 +1,17 @@
-# 实际环境快照：只导出 me5418-highway，未导出系统 Python / Conda base。
-# 导出命令：conda env export -n me5418-highway --no-builds
-# 已移除个人 prefix；保留实际安装版本、Conda/Pip 归属与 Linux 运行库。
-# PyTorch 实测为 CPU 构建：torch 2.14.1+cpu，torch.version.cuda 为 None。
-# 适用 Linux；这是无 build 的版本快照，并非跨平台或带哈希的锁文件。
-# 本次只导出和静态核对，未在全新环境重建，也未修改现有环境。
-# 新机器创建：conda env create -f environment.yml
+# M1/M2最小直接依赖复现配置；复用现有环境，本轮未创建/升级环境。
+# 此配置没有进行全新安装验证；可选pytest/视频依赖单列。
 name: me5418-highway
 channels:
   - defaults
 dependencies:
-  - _libgcc_mutex=0.1
-  - _openmp_mutex=5.1
-  - bzip2=1.0.8
-  - ca-certificates=2026.8.13
-  - ld_impl_linux-64=2.44
-  - libexpat=2.8.4
-  - libffi=3.4.8
-  - libgcc=15.2.0
-  - libgcc-ng=15.2.0
-  - libnsl=2.0.0
-  - libstdcxx=15.2.0
-  - libuuid=1.41.5
-  - libxcb=1.17.0
-  - libzlib=1.3.2
-  - ncurses=6.6
-  - openssl=3.5.8
-  - packaging=26.3
-  - pip=26.2.1
-  - pthread-stubs=0.3
   - python=3.11.16
-  - readline=8.3
-  - setuptools=83.0.0
-  - sqlite=3.53.4
-  - tk=8.6.15
-  - tzdata=2026c
-  - wheel=0.47.0
-  - xorg-libx11=1.8.13
-  - xorg-libxau=1.0.12
-  - xorg-libxdmcp=1.1.5
-  - xorg-xorgproto=2025.1
-  - xz=5.8.2
-  - zlib=1.3.2
+  - pip
   - pip:
-      # 通用 Python 依赖从 PyPI 获取，固定的 +cpu 版本由官方 CPU 索引提供。
-      - --index-url https://pypi.org/simple
       - --extra-index-url https://download.pytorch.org/whl/cpu
-      - cloudpickle==3.1.2
-      - contourpy==1.3.3
-      - cycler==0.12.1
-      - farama-notifications==0.0.6
-      - filelock==3.32.3
-      - fonttools==4.67.0
-      - fsspec==2026.7.0
       - gymnasium==1.4.0
       - highway-env==1.12.1
-      - jinja2==3.1.6
-      - kiwisolver==1.5.1
-      - markupsafe==3.0.3
-      - matplotlib==3.11.2
-      - mpmath==1.3.0
-      - networkx==3.6.1
       - numpy==2.4.6
-      - pandas==3.0.6
-      - pillow==12.3.0
       - pygame-ce==2.5.8
-      - pyparsing==3.3.3
-      - python-dateutil==2.9.0.post0
-      - six==1.17.0
-      - sympy==1.14.0
+      - Pillow==12.3.0
+      - matplotlib==3.11.2
       - torch==2.14.1+cpu
-      - typing-extensions==4.16.0

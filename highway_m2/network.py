@@ -36,22 +36,19 @@ class QNetwork(nn.Module):
 
     def __init__(self, observation_dim: int = OBSERVATION_DIM,
                  action_dim: int = ACTION_DIM,
-                 hidden_sizes: Sequence[int] = HIDDEN_SIZES, *,
-                 device=None, dtype=None):
+                 hidden_sizes: Sequence[int] = HIDDEN_SIZES):
         super().__init__()
         self.observation_dim = int(observation_dim)
         self.action_dim = int(action_dim)
         self.hidden_sizes = tuple(int(size) for size in hidden_sizes)
-        # 小范围适配：DQN 可显式要求 CPU/float32，原调用保持 PyTorch 默认行为。
-        factory = {"device": device, "dtype": dtype}
         layers: list[nn.Module] = []
         width = self.observation_dim
         for size in self.hidden_sizes:
-            layers += [nn.Linear(width, size, **factory), nn.ReLU()]
+            layers += [nn.Linear(width, size), nn.ReLU()]
             width = size
         # The output layer stays linear: Q-values are unbounded signed returns,
         # and the reward contains -20 terminal penalties.
-        layers.append(nn.Linear(width, self.action_dim, **factory))
+        layers.append(nn.Linear(width, self.action_dim))
         self.layers = nn.Sequential(*layers)
 
     def forward(self, observation: torch.Tensor) -> torch.Tensor:
@@ -63,8 +60,7 @@ class QNetwork(nn.Module):
             )
         if observation.dim() not in (1, 2):
             raise ValueError("Expected an observation or a batch of observations.")
-        # 保留默认 float64 输入转换，同时支持调用者显式 network.double()。
-        return self.layers(observation.to(dtype=self.layers[0].weight.dtype))
+        return self.layers(observation.to(dtype=torch.float32))
 
     def config(self) -> dict:
         return {"observation_dim": self.observation_dim,
@@ -107,8 +103,8 @@ def save_checkpoint(network: QNetwork, path: str | Path, **metadata) -> None:
     torch.save({
         "state_dict": network.state_dict(),
         "network_config": network.config(),
-        "observation_names": list(getattr(network, "observation_names", OBSERVATION_NAMES)),
-        "action_names": list(getattr(network, "action_names", ACTION_NAMES)),
+        "observation_names": list(OBSERVATION_NAMES),
+        "action_names": list(ACTION_NAMES),
         "metadata": metadata,
     }, path)
 

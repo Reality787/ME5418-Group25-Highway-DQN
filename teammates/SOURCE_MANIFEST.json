@@ -1,168 +1,152 @@
 {
-  "base_commit": "9ec81f945edbb2bbda9496e6cb49572920c31b38",
+  "mode": "M1/M2 originals authoritative; no core changes",
   "archives": {
     "M1": {
-      "path": "/home/aileenz/下载/ME5418_Group25_M1_Submission.zip",
-      "sha256": "3c67d9276820d1265fbe1eaf97dde00859fad1dd1efd8117ca5ee4832d3c5bf2"
+      "archive": "/home/aileenz/下载/ME5418_Group25_M1_Submission.zip",
+      "sha256": "3c67d9276820d1265fbe1eaf97dde00859fad1dd1efd8117ca5ee4832d3c5bf2",
+      "entries": 53,
+      "bytes": 1352903
     },
     "M2": {
-      "path": "/home/aileenz/下载/ME5418_Group25_M2.zip",
-      "sha256": "dcb9fff3f711c417854dcb56155d9a20aded6e9cec90da9fc90acfcb29806e20"
+      "archive": "/home/aileenz/下载/ME5418_Group25_M2.zip",
+      "sha256": "dcb9fff3f711c417854dcb56155d9a20aded6e9cec90da9fc90acfcb29806e20",
+      "entries": 26,
+      "bytes": 280641
     }
   },
-  "imported_files": {
-    "teammates/m1/MANIFEST.json": {
+  "adopted_files": {
+    "highway_m1/__init__.py": {
       "archive": "M1",
-      "original_path": "MANIFEST.json",
-      "original_sha256": "efe751776e933d9eaa25f8b32ca89e22097858f6db9d1cf76f1e93b4dfe488ef",
-      "integrated_sha256": "efe751776e933d9eaa25f8b32ca89e22097858f6db9d1cf76f1e93b4dfe488ef",
+      "original_path": "highway_m1/__init__.py",
+      "sha256": "b9e76d771ddf6c1e62c5fc45fe1eaf74c42fe3abb3f410670ececdecfb95c2ee",
       "modified": false
     },
-    "teammates/m1/PROJECT_ROADMAP.md": {
+    "highway_m1/environment.py": {
       "archive": "M1",
-      "original_path": "PROJECT_ROADMAP.md",
-      "original_sha256": "c513bf12411b8f8057089ca9af9e0806d4c08fd63729d0ce92d98f171b8e3940",
-      "integrated_sha256": "c513bf12411b8f8057089ca9af9e0806d4c08fd63729d0ce92d98f171b8e3940",
+      "original_path": "highway_m1/environment.py",
+      "sha256": "0e806a731fe0c52ab5b136ded408122fe526c17d1f480ecefc11c2abbcf92cb8",
       "modified": false
+    },
+    "demo.py": {
+      "archive": "M1",
+      "original_path": "demo.py",
+      "sha256": "00eb387288f46837fa58de31d0d263f907d118fc634a756ea2acd1bfea24c648",
+      "modified": false
+    },
+    "verify.py": {
+      "archive": "M1",
+      "original_path": "verify.py",
+      "sha256": "51eaba2bf195fb2511e88ae39aed3dd3654419c7ce7aeab4652cf310d2f5c0e9",
+      "modified": true,
+      "original_sha256": "4940c41ef7254d79c605324531549a7ea04a6e73543caec56bf4de7cfc40ed30",
+      "reason": "仅依赖版本报告：未安装包记录null；不改变Gym检查、rollout或M1算法"
     },
     "teammates/m1/README.md": {
       "archive": "M1",
       "original_path": "README.md",
-      "original_sha256": "0a4913091d57120d2fe0b9e483281dc8b654f4be56e52fa0466ec6f03c94f8ba",
-      "integrated_sha256": "0a4913091d57120d2fe0b9e483281dc8b654f4be56e52fa0466ec6f03c94f8ba",
+      "sha256": "0a4913091d57120d2fe0b9e483281dc8b654f4be56e52fa0466ec6f03c94f8ba",
       "modified": false
     },
     "teammates/m1/README_CN.md": {
       "archive": "M1",
       "original_path": "README_CN.md",
-      "original_sha256": "f6bf417902b69b1592c1be282dbd8567e4e4c39c0b02ae01dd9a4fe74a621661",
-      "integrated_sha256": "f6bf417902b69b1592c1be282dbd8567e4e4c39c0b02ae01dd9a4fe74a621661",
+      "sha256": "f6bf417902b69b1592c1be282dbd8567e4e4c39c0b02ae01dd9a4fe74a621661",
       "modified": false
     },
     "teammates/m1/SPECIFICATION.md": {
       "archive": "M1",
       "original_path": "SPECIFICATION.md",
-      "original_sha256": "1bfed997fd0bc1a7cc8c4174b011946c3c82fd88d3bd37325a3fdc03ca4a01aa",
-      "integrated_sha256": "1bfed997fd0bc1a7cc8c4174b011946c3c82fd88d3bd37325a3fdc03ca4a01aa",
+      "sha256": "1bfed997fd0bc1a7cc8c4174b011946c3c82fd88d3bd37325a3fdc03ca4a01aa",
       "modified": false
     },
-    "teammates/m1/demo.py": {
+    "teammates/m1/PROJECT_ROADMAP.md": {
       "archive": "M1",
-      "original_path": "demo.py",
-      "original_sha256": "00eb387288f46837fa58de31d0d263f907d118fc634a756ea2acd1bfea24c648",
-      "integrated_sha256": "00eb387288f46837fa58de31d0d263f907d118fc634a756ea2acd1bfea24c648",
+      "original_path": "PROJECT_ROADMAP.md",
+      "sha256": "c513bf12411b8f8057089ca9af9e0806d4c08fd63729d0ce92d98f171b8e3940",
+      "modified": false
+    },
+    "teammates/m1/MANIFEST.json": {
+      "archive": "M1",
+      "original_path": "MANIFEST.json",
+      "sha256": "efe751776e933d9eaa25f8b32ca89e22097858f6db9d1cf76f1e93b4dfe488ef",
       "modified": false
     },
     "teammates/m1/environment.yml": {
       "archive": "M1",
       "original_path": "environment.yml",
-      "original_sha256": "8894a511ca95f1952f5e60b189bfa0793a827fb38dc0ae9f65e98ff052bc96cb",
-      "integrated_sha256": "8894a511ca95f1952f5e60b189bfa0793a827fb38dc0ae9f65e98ff052bc96cb",
-      "modified": false
-    },
-    "highway_m1/__init__.py": {
-      "archive": "M1",
-      "original_path": "highway_m1/__init__.py",
-      "original_sha256": "b9e76d771ddf6c1e62c5fc45fe1eaf74c42fe3abb3f410670ececdecfb95c2ee",
-      "integrated_sha256": "3da4a47584cef722e0d959efc34ee69554090e5e3e193c41da94f6ce7691cfb7",
-      "modified": true
-    },
-    "highway_m1/environment.py": {
-      "archive": "M1",
-      "original_path": "highway_m1/environment.py",
-      "original_sha256": "0e806a731fe0c52ab5b136ded408122fe526c17d1f480ecefc11c2abbcf92cb8",
-      "integrated_sha256": "fd5e62d9d4f973a24e4be0c839b0c2d292adb89c49e0be54525f5cd678c26189",
-      "modified": true
-    },
-    "teammates/m1/requirements-lock-windows.txt": {
-      "archive": "M1",
-      "original_path": "requirements-lock-windows.txt",
-      "original_sha256": "7e20f9ba495e3cfe4d20c1bd7d2980e0ca906bc9c69b559692071901732f063a",
-      "integrated_sha256": "7e20f9ba495e3cfe4d20c1bd7d2980e0ca906bc9c69b559692071901732f063a",
+      "sha256": "8894a511ca95f1952f5e60b189bfa0793a827fb38dc0ae9f65e98ff052bc96cb",
       "modified": false
     },
     "teammates/m1/requirements.txt": {
       "archive": "M1",
       "original_path": "requirements.txt",
-      "original_sha256": "75843390082a8c5def62a55d734782a435d552aaec412b3145d7ed20fed0ddc6",
-      "integrated_sha256": "75843390082a8c5def62a55d734782a435d552aaec412b3145d7ed20fed0ddc6",
+      "sha256": "75843390082a8c5def62a55d734782a435d552aaec412b3145d7ed20fed0ddc6",
+      "modified": false
+    },
+    "teammates/m1/requirements-lock-windows.txt": {
+      "archive": "M1",
+      "original_path": "requirements-lock-windows.txt",
+      "sha256": "7e20f9ba495e3cfe4d20c1bd7d2980e0ca906bc9c69b559692071901732f063a",
       "modified": false
     },
     "teammates/m1/tests/test_environment.py": {
       "archive": "M1",
       "original_path": "tests/test_environment.py",
-      "original_sha256": "971a738a7615d6304a3c44c6966bb6cd5d7e132e78a97972e1db03d3cfb700a8",
-      "integrated_sha256": "971a738a7615d6304a3c44c6966bb6cd5d7e132e78a97972e1db03d3cfb700a8",
-      "modified": false
-    },
-    "teammates/m1/verify.py": {
-      "archive": "M1",
-      "original_path": "verify.py",
-      "original_sha256": "4940c41ef7254d79c605324531549a7ea04a6e73543caec56bf4de7cfc40ed30",
-      "integrated_sha256": "4940c41ef7254d79c605324531549a7ea04a6e73543caec56bf4de7cfc40ed30",
-      "modified": false
-    },
-    "teammates/m2/README.md": {
-      "archive": "M2",
-      "original_path": "README.md",
-      "original_sha256": "d609435478f5df298372936c9bd68bccf73e25957b974d72eebc1ade5cc1ae16",
-      "integrated_sha256": "d609435478f5df298372936c9bd68bccf73e25957b974d72eebc1ade5cc1ae16",
-      "modified": false
-    },
-    "teammates/m2/README_CN.md": {
-      "archive": "M2",
-      "original_path": "README_CN.md",
-      "original_sha256": "722dc67912f3aaebccc77a3587c3077594bf24ebe782fb11902cae1c02327a29",
-      "integrated_sha256": "722dc67912f3aaebccc77a3587c3077594bf24ebe782fb11902cae1c02327a29",
-      "modified": false
-    },
-    "teammates/m2/environment.yml": {
-      "archive": "M2",
-      "original_path": "environment.yml",
-      "original_sha256": "3f2bd5473365df4f5d0339fae0e20f3870d5ddb49f2754c8607be19807bae34b",
-      "integrated_sha256": "3f2bd5473365df4f5d0339fae0e20f3870d5ddb49f2754c8607be19807bae34b",
+      "sha256": "971a738a7615d6304a3c44c6966bb6cd5d7e132e78a97972e1db03d3cfb700a8",
       "modified": false
     },
     "highway_m2/__init__.py": {
       "archive": "M2",
       "original_path": "highway_m2/__init__.py",
-      "original_sha256": "6b740d30ce19929b755938bec32ceb6eb4cf086d79a3c76397f87a7e971c4aff",
-      "integrated_sha256": "6b740d30ce19929b755938bec32ceb6eb4cf086d79a3c76397f87a7e971c4aff",
+      "sha256": "6b740d30ce19929b755938bec32ceb6eb4cf086d79a3c76397f87a7e971c4aff",
       "modified": false
     },
     "highway_m2/network.py": {
       "archive": "M2",
       "original_path": "highway_m2/network.py",
-      "original_sha256": "82b494546ba00271f534c663035650c8b07c3369a9fb51f649a5e7071db38d27",
-      "integrated_sha256": "c6dcf669d572d2055df2228a4b7a718eba7a82834ccad0e159ce859a1c116b46",
-      "modified": true
-    },
-    "teammates/m2/nn_demo.py": {
-      "archive": "M2",
-      "original_path": "nn_demo.py",
-      "original_sha256": "9db1b79bedde0db1034a3562fd074734930aee8449838d54f6c3fa5a09fa04fb",
-      "integrated_sha256": "9db1b79bedde0db1034a3562fd074734930aee8449838d54f6c3fa5a09fa04fb",
+      "sha256": "82b494546ba00271f534c663035650c8b07c3369a9fb51f649a5e7071db38d27",
       "modified": false
     },
-    "teammates/m2/requirements-lock-linux.txt": {
+    "nn_demo.py": {
       "archive": "M2",
-      "original_path": "requirements-lock-linux.txt",
-      "original_sha256": "d842868741c24ad087d9efa631b252b8d7e35b12bbb8f5a3354eb78faa2e2975",
-      "integrated_sha256": "d842868741c24ad087d9efa631b252b8d7e35b12bbb8f5a3354eb78faa2e2975",
+      "original_path": "nn_demo.py",
+      "sha256": "9db1b79bedde0db1034a3562fd074734930aee8449838d54f6c3fa5a09fa04fb",
+      "modified": false
+    },
+    "teammates/m2/README.md": {
+      "archive": "M2",
+      "original_path": "README.md",
+      "sha256": "d609435478f5df298372936c9bd68bccf73e25957b974d72eebc1ade5cc1ae16",
+      "modified": false
+    },
+    "teammates/m2/README_CN.md": {
+      "archive": "M2",
+      "original_path": "README_CN.md",
+      "sha256": "722dc67912f3aaebccc77a3587c3077594bf24ebe782fb11902cae1c02327a29",
+      "modified": false
+    },
+    "teammates/m2/environment.yml": {
+      "archive": "M2",
+      "original_path": "environment.yml",
+      "sha256": "3f2bd5473365df4f5d0339fae0e20f3870d5ddb49f2754c8607be19807bae34b",
       "modified": false
     },
     "teammates/m2/requirements.txt": {
       "archive": "M2",
       "original_path": "requirements.txt",
-      "original_sha256": "7cef895b7835ad97589ee91f382027d07b67741c0a18ee744b6a19229e93e5b0",
-      "integrated_sha256": "7cef895b7835ad97589ee91f382027d07b67741c0a18ee744b6a19229e93e5b0",
+      "sha256": "7cef895b7835ad97589ee91f382027d07b67741c0a18ee744b6a19229e93e5b0",
+      "modified": false
+    },
+    "teammates/m2/requirements-lock-linux.txt": {
+      "archive": "M2",
+      "original_path": "requirements-lock-linux.txt",
+      "sha256": "d842868741c24ad087d9efa631b252b8d7e35b12bbb8f5a3354eb78faa2e2975",
       "modified": false
     },
     "teammates/m2/tests/test_network.py": {
       "archive": "M2",
       "original_path": "tests/test_network.py",
-      "original_sha256": "52d8375a1375f1a03bfa5e50fa355c5a16f11b7a5178fbbac34881f2a9d99302",
-      "integrated_sha256": "52d8375a1375f1a03bfa5e50fa355c5a16f11b7a5178fbbac34881f2a9d99302",
+      "sha256": "52d8375a1375f1a03bfa5e50fa355c5a16f11b7a5178fbbac34881f2a9d99302",
       "modified": false
     }
   }

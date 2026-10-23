@@ -1,16 +1,7 @@
-# 队友原代码与最小适配
+# 队友来源记录
 
-`m1/` 和 `m2/` 保存原演示、测试、规格及依赖清单；实际可导入包在仓库根的 `highway_m1/`、`highway_m2/`。22 个导入文件中 19 个逐字节保留，3 个局部适配；来源、原始/当前哈希见 [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json)，三个原文件的改动见 [changes/](changes/)。新增 schema/rendering 为从 M1 提取的共用代码。
+M1/M2原始ZIP分别来自用户提供的本地下载文件。根目录 `highway_m1/`、`highway_m2/`、`demo.py`、`verify.py`、`nn_demo.py` 直接采用原件。M1/M2原pytest测试保留在本目录的 `m1/tests` 和 `m2/tests`，原README、规格和依赖记录也保留。
 
-正式训练使用原项目环境与 M2 QNetwork 的薄适配接口。M1 虽然也是 34 维/9 动作，但归一化、奖励和动力学不同，保留为独立诊断环境；不能直接使用正式旧权重当作同一环境评测。M2 的数值演示和简单 checkpoint 也不替代正式 DQN/恢复协议。
+`SOURCE_MANIFEST.json` 列出每个采用文件的原始路径和SHA256。本轮22个采用文件中21个逐字节匹配原件；verify.py仅将缺少可选依赖的版本记录为null（差异见changes/verify_optional_metadata.patch），其Gym检查和rollout不变；此前的dtype/device适配、schema/render拆分和旧模型兼容补丁已撤下。M2包中重复的M1环境、规格和测试经字节比较一致，去重保留M1来源的一份。
 
-从仓库根使用项目解释器运行：
-
-```bash
-python teammate_demo.py --help
-python -m teammates.m2.nn_demo --help
-```
-
-完整整合结果和实际验证命令见 [整合记录](../docs/teammate_code_integration.md)。原 pytest 测试保留，但当前项目环境未安装 pytest，原测试没有重跑；原视频导出需要缺失的 imageio/imageio-ffmpeg，也未验证。新 PNG 入口和正式 unittest 已实际运行，没有安装依赖。
-
-原 README/报告引用的 artifacts、视频、ZIP 内模型和历史日志没有导入本仓库。依赖版本是原来源记录，不要用它们覆盖项目已有环境。M2 附带的重复 M1 包、测试和规格已按字节核对去重。保留队友文档的 AI 辅助说明，不推断具体作者或成员分工。
+原文档提到的artifacts、训练/数值演示权重、视频和报告只属于原提交记录；未将它们重新作为当前结果上传。原pytest和视频功能在缺少可选依赖的本机未验证。当前实际结果与入口以根README和 `docs/m1_m2_authoritative_integration.md` 为准。
