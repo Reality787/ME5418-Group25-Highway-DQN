@@ -1,0 +1,29 @@
+--- original/verify.py
++++ active/verify.py
+@@ -57,6 +57,17 @@
+         env.close()
+ 
+ 
++def package_versions(names) -> dict:
++    """只修正诊断输出：可选依赖未安装时记录 None，不伪称该功能已验证。"""
++    result = {}
++    for name in names:
++        try:
++            result[name] = importlib.metadata.version(name)
++        except importlib.metadata.PackageNotFoundError:
++            result[name] = None
++    return result
++
++
+ def main() -> None:
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--seed", type=int, default=25)
+@@ -75,7 +86,7 @@
+                 "Pillow", "imageio", "imageio-ffmpeg", "pytest")
+     result = {"gymnasium_checker": "passed", "same_seed_reproducibility": "passed",
+               "python": platform.python_version(), "platform": platform.platform(),
+-              "dependencies": {name: importlib.metadata.version(name) for name in packages},
++              "dependencies": package_versions(packages),
+               "rollout": first}
+     args.output.parent.mkdir(parents=True, exist_ok=True)
+     args.output.write_text(json.dumps(result, indent=2, allow_nan=False), encoding="utf-8")

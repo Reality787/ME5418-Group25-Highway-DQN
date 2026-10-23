@@ -1,0 +1,152 @@
+{
+  "root": "/home/aileenz/文档/ChatGPT/highway",
+  "interpreter": "/home/aileenz/miniconda3/envs/me5418-highway/bin/python",
+  "core_files_modified_from_zip": 0,
+  "adopted_files": 22,
+  "unchanged_files": 21,
+  "one_utility_fix": "verify.py records missing optional dependency metadata as null",
+  "tests": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 1.065
+  },
+  "m1_verify": {
+    "gymnasium_checker": "passed",
+    "same_seed_reproducibility": "passed",
+    "python": "3.11.16",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "highway-env": "1.12.1",
+      "gymnasium": "1.4.0",
+      "numpy": "2.4.6",
+      "pygame-ce": "2.5.8",
+      "matplotlib": "3.11.2",
+      "Pillow": "12.3.0",
+      "imageio": null,
+      "imageio-ffmpeg": null,
+      "pytest": null
+    },
+    "rollout": {
+      "seed": 25,
+      "steps": 200,
+      "total_reward": 69.36152138445784,
+      "terminated": false,
+      "truncated": true,
+      "crashed": false,
+      "rgb_shape": [
+        300,
+        1000,
+        3
+      ],
+      "trajectory_sha256": "593eaf288943622364994b0d26e66b61adff0707e9b2e47379efccce519e5117"
+    }
+  },
+  "m1_demo": {
+    "environment": "M1 HighwayDecisionEnv",
+    "seed": 25,
+    "steps": 200,
+    "simulation_time_s": 40.0,
+    "observation_shape": [
+      34
+    ],
+    "reward": 149.9999999999983,
+    "terminated": false,
+    "truncated": true,
+    "note": "未训练策略的功能演示，不是模型评测"
+  },
+  "m2_numerical": {
+    "purpose": "Network forward/backward demonstration; no policy training or evaluation",
+    "architecture": "34 -> 128 ReLU -> 128 ReLU -> 9 (linear)",
+    "trainable_parameters": 22153,
+    "seed": 25,
+    "batch_size": 32,
+    "gamma": 0.99,
+    "learning_rate": 0.001,
+    "data": {
+      "source": "HighwayDecisionEnv, uniformly random valid actions",
+      "pool_size": 200,
+      "episodes": 2,
+      "terminated": 0,
+      "truncated": 1,
+      "reward_min": 0.02013702504336834,
+      "reward_max": 0.6722490191459656
+    },
+    "forward": {
+      "input_shape": [
+        32,
+        34
+      ],
+      "output_shape": [
+        32,
+        9
+      ],
+      "dtype": "torch.float32",
+      "all_finite": true,
+      "unmasked_argmax_invalid": 18,
+      "masked_greedy_always_valid": true
+    },
+    "backward": {
+      "initial_td_loss": 0.09045112878084183,
+      "nonzero_output_gradients": 32,
+      "gradient_norms": {
+        "layers.0.weight": 0.09733818471431732,
+        "layers.0.bias": 0.03415234014391899,
+        "layers.2.weight": 0.19091680645942688,
+        "layers.2.bias": 0.10070569813251495,
+        "layers.4.weight": 0.22837349772453308,
+        "layers.4.bias": 0.24718429148197174
+      }
+    },
+    "optimizer_step": {
+      "parameter_change_norms": {
+        "layers.0.weight": 0.042912907898426056,
+        "layers.0.bias": 0.009693524800240993,
+        "layers.2.weight": 0.09468556940555573,
+        "layers.2.bias": 0.010197926312685013,
+        "layers.4.weight": 0.02027219720184803,
+        "layers.4.bias": 0.002236064523458481
+      },
+      "loss_after_one_step": 0.0749242976307869
+    },
+    "fixed_batch_fit": {
+      "updates": 10,
+      "initial_loss": 0.09045112878084183,
+      "final_loss": 0.014101178385317326
+    },
+    "checkpoint": {
+      "path": "/tmp/me5418-authoritative-checks-0WL34s/m2-numerical/q_network_demo.pt",
+      "reload_outputs_identical": true
+    },
+    "python": "3.11.16",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "torch": "2.14.1+cpu",
+      "highway-env": "1.12.1",
+      "gymnasium": "1.4.0",
+      "numpy": "2.4.6",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "unverified": [
+    "original pytest suites: pytest absent",
+    "original video export: imageio/imageio-ffmpeg absent",
+    "desktop window"
+  ],
+  "archive": {
+    "path": "/home/aileenz/文档/ChatGPT/highway-legacy-archive/pre-authoritative-20261023T135628Z",
+    "snapshot_files": 370,
+    "snapshot_hashes_verified": true,
+    "training_original_files_moved": 65,
+    "training_hashes_verified": true,
+    "report_with_uncommitted_names_preserved": true
+  },
+  "formal_training_executed": false,
+  "learning_agent_present": false,
+  "commands": [
+    "python -m unittest discover -s tests -v",
+    "python verify.py --seed 25 --output /tmp/me5418-authoritative-checks-0WL34s/m1-verification.json",
+    "python environment_demo.py --policy hold --episodes 1 --seed 25 --render rgb_array --output /tmp/me5418-authoritative-checks-0WL34s/m1-frame.png",
+    "python nn_demo.py --seed 25 --pool-size 200 --batch-size 32 --fit-steps 10 --output /tmp/me5418-authoritative-checks-0WL34s/m2-numerical"
+  ]
+}
