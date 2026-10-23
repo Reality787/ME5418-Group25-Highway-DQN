@@ -1,0 +1,139 @@
+{
+  "project": "ME5418 Group 25 Environment Milestone",
+  "proposal_revision": "9 actions 34 inputs",
+  "verification": "74 pytest tests and seeded Gymnasium verification passed on Windows",
+  "ubuntu_verified": false,
+  "trained_agent_included": false,
+  "files": [
+    {
+      "path": "artifacts/demo/demo.mp4",
+      "bytes": 148299,
+      "sha256": "245ad4f4005a648d3220bbfffdeba40f926cc2316f20accd35b233cfc7803e32"
+    },
+    {
+      "path": "artifacts/demo/final.png",
+      "bytes": 40845,
+      "sha256": "4130a45b53dfddd7d0238354a5a9f617c9c53c0a1467225ce1375970cedb91c7"
+    },
+    {
+      "path": "artifacts/demo/initial.png",
+      "bytes": 33754,
+      "sha256": "0957c66a6feb54f5b4411bfd8c3eda26166bf126e4b4fa2f836c664756d9dc90"
+    },
+    {
+      "path": "artifacts/demo/summary.json",
+      "bytes": 4146,
+      "sha256": "4e2cb9f08b2285413384967188e3fd380e3b663b131f7f67fb82c550f7659ec3"
+    },
+    {
+      "path": "artifacts/demo/trajectory.csv",
+      "bytes": 52949,
+      "sha256": "338e053c8a447c609b854a9de3582ee26fbc990d3ccda5b92e2741e8a9315c48"
+    },
+    {
+      "path": "artifacts/pytest.txt",
+      "bytes": 182,
+      "sha256": "b21f938583bf66c658a534017ff83c693635b16b49487dc399e94646274e29af"
+    },
+    {
+      "path": "artifacts/random_demo/demo.mp4",
+      "bytes": 391182,
+      "sha256": "93aa88177f9d43ee687b31c8683a9b722d8d032f5ac0fd71178db85f033ca308"
+    },
+    {
+      "path": "artifacts/random_demo/final.png",
+      "bytes": 37112,
+      "sha256": "3de42867c245bb7872be60b1a7b30651767f1fd987195056aa951bcb9e056329"
+    },
+    {
+      "path": "artifacts/random_demo/initial.png",
+      "bytes": 33816,
+      "sha256": "1ea144333c13f6b397e68958561bd9c278a4b90374e7649f2073aa3c6c90aa71"
+    },
+    {
+      "path": "artifacts/random_demo/summary.json",
+      "bytes": 4029,
+      "sha256": "39bb6fffb45b2da3d15674a4ee2fdb56c3db98229fec6661916accfd5544bc55"
+    },
+    {
+      "path": "artifacts/random_demo/trajectory.csv",
+      "bytes": 78660,
+      "sha256": "8a52a90fca9ea84f6eff6ba60ac6814bce0e573601aead383f79e2803786cf29"
+    },
+    {
+      "path": "artifacts/validation.json",
+      "bytes": 1209,
+      "sha256": "728df779ed39d9aa8f09e063526b20c7f7c96e99941bc824c55e53f8aec7503d"
+    },
+    {
+      "path": "artifacts/verification.json",
+      "bytes": 742,
+      "sha256": "74753204552863a7874d0d0e7f23246b89a8f48f6de78ecb4710f1a248a6d3d8"
+    },
+    {
+      "path": "demo.py",
+      "bytes": 13032,
+      "sha256": "00eb387288f46837fa58de31d0d263f907d118fc634a756ea2acd1bfea24c648"
+    },
+    {
+      "path": "environment.yml",
+      "bytes": 325,
+      "sha256": "8894a511ca95f1952f5e60b189bfa0793a827fb38dc0ae9f65e98ff052bc96cb"
+    },
+    {
+      "path": "highway_m1/__init__.py",
+      "bytes": 237,
+      "sha256": "b9e76d771ddf6c1e62c5fc45fe1eaf74c42fe3abb3f410670ececdecfb95c2ee"
+    },
+    {
+      "path": "highway_m1/environment.py",
+      "bytes": 21937,
+      "sha256": "0e806a731fe0c52ab5b136ded408122fe526c17d1f480ecefc11c2abbcf92cb8"
+    },
+    {
+      "path": "PROJECT_ROADMAP.md",
+      "bytes": 11741,
+      "sha256": "c513bf12411b8f8057089ca9af9e0806d4c08fd63729d0ce92d98f171b8e3940"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7817,
+      "sha256": "0a4913091d57120d2fe0b9e483281dc8b654f4be56e52fa0466ec6f03c94f8ba"
+    },
+    {
+      "path": "README_CN.md",
+      "bytes": 2421,
+      "sha256": "f6bf417902b69b1592c1be282dbd8567e4e4c39c0b02ae01dd9a4fe74a621661"
+    },
+    {
+      "path": "report/ME5418_Group25_Environment_Report.pdf",
+      "bytes": 8321,
+      "sha256": "93352c68a61c2ced32b05717236615c12581a27379e7d46b2e97377402fb4680"
+    },
+    {
+      "path": "requirements-lock-windows.txt",
+      "bytes": 686,
+      "sha256": "7e20f9ba495e3cfe4d20c1bd7d2980e0ca906bc9c69b559692071901732f063a"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 153,
+      "sha256": "75843390082a8c5def62a55d734782a435d552aaec412b3145d7ed20fed0ddc6"
+    },
+    {
+      "path": "SPECIFICATION.md",
+      "bytes": 6630,
+      "sha256": "1bfed997fd0bc1a7cc8c4174b011946c3c82fd88d3bd37325a3fdc03ca4a01aa"
+    },
+    {
+      "path": "tests/test_environment.py",
+      "bytes": 18837,
+      "sha256": "971a738a7615d6304a3c44c6966bb6cd5d7e132e78a97972e1db03d3cfb700a8"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 3724,
+      "sha256": "4940c41ef7254d79c605324531549a7ea04a6e73543caec56bf4de7cfc40ed30"
+    }
+  ]
+}

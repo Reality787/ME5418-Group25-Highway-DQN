@@ -18,7 +18,10 @@ SOURCE_FILES = (
     "train.py", "scenarios.py", "metrics.py", "validation.py", "checkpoints.py",
     "demo.py", "network_demo.py", "validate_env.py", "plot_training.py",
     "baseline.py", "evaluate.py", "environment.yml", "requirements.txt",
-    "requirements-network.txt",
+    "requirements-network.txt", "legacy_checkpoint.py", "integration_compatibility.json",
+    "highway_m1/__init__.py", "highway_m1/schema.py", "highway_m1/environment.py", "highway_m1/rendering.py",
+    "highway_m2/__init__.py", "highway_m2/network.py",
+    "tests/fixtures/network_before_integration.py", "teammate_demo.py", "teammates/m1/demo.py",
 )
 ARCHIVE_ROOT = "ME5418_Group25_LearningAgent_CR"
 

@@ -18,6 +18,9 @@ RUNTIME_FILES = (
     "config.py", "environment.py", "project_environment.py", "joint_actions.py",
     "observation.py", "reward.py", "network.py", "agent.py", "replay_buffer.py",
     "scenarios.py", "metrics.py", "validation.py", "checkpoints.py", "train.py",
+    # 网络委托的源码也必须参加签名，不能只检查薄适配器。
+    "highway_m1/__init__.py", "highway_m1/schema.py",
+    "highway_m2/__init__.py", "highway_m2/network.py", "legacy_checkpoint.py",
 )
 
 
