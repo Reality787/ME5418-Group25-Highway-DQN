@@ -1,0 +1,12 @@
+# 环境提交包：Python 3.11.16 中实际验证的环境运行依赖版本（阶段 1B-3）。
+# 仅记录 HighwayEnv 运行依赖，不导出整个 Conda 环境；本轮未执行安装。
+gymnasium==1.4.0
+highway-env==1.12.1
+numpy==2.4.6
+pygame-ce==2.5.8
+matplotlib==3.11.2
+pandas==3.0.6
+farama-notifications==0.0.6
+
+# 仅运行环境演示无需 PyTorch；全套测试、Q 网络和 DQN 还需 requirements-network.txt。
+# 完整项目 Conda 快照见 environment.yml；本次整理没有安装或升级依赖。

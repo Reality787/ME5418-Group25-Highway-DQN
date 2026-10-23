@@ -1,0 +1,7 @@
+# 阶段 2 可选网络依赖；环境演示仍只需要 requirements.txt。
+# 已验证 Linux / Python 3.11.16 / CPU；不用 CUDA、torchvision 或 torchaudio。
+# 安装命令：python -m pip install -r requirements-network.txt
+# 先装环境依赖时使用 requirements.txt，本文件不重复导出环境包。
+--index-url https://download.pytorch.org/whl/cpu
+-c requirements.txt
+torch==2.14.1+cpu

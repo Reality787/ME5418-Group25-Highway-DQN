@@ -1,0 +1,33 @@
+# Python 缓存与测试工具缓存。
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 本地虚拟环境及环境变量文件。
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# 项目生成的模型、日志和视频；保留用于跟踪空目录的占位文件。
+/outputs/models/*
+!/outputs/models/.gitkeep
+/outputs/logs/*
+!/outputs/logs/.gitkeep
+/outputs/videos/*
+!/outputs/videos/.gitkeep
+
+# 源代码正常跟踪；课程资料须核实分享权限，本次不纳入上传清单。
+
+# 阶段3生成的训练检查点、场景摘要和曲线；不提交大型运行产物。
+/outputs/training/
+
+# 个人编辑器配置、独立交付暂存与生成归档。
+/.vscode/
+/submission/
+/dist/
+*.pt
+*.pth
