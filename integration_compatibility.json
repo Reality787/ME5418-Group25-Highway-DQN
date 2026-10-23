@@ -1,0 +1,42 @@
+{
+  "base_commit": "9ec81f945edbb2bbda9496e6cb49572920c31b38",
+  "base_signature": "c98a0123f46fa245cbaf1a9a6140dd2ae99b6ca916f8141047bc4cc746657989",
+  "base_source_hashes": {
+    "agent.py": "de028923e65dea6264c9729c60f165c7518b19c17b1c2a9757737d0b6deab3da",
+    "checkpoints.py": "2ed730b1c10ce24d77338ba4921579a852ffe4e6b86c6c3774c3d8ec8a6f6852",
+    "config.py": "68eb0576362af433c8f165755cdce68c92bc9bef1b5ceb52826e4060b5a238a5",
+    "environment.py": "8ff9e75afa6e0668e5417317325f6c3658b073ee8185cd269f315b2b32ff7dec",
+    "joint_actions.py": "a52f451e28bf3c1dd653bec802d3bd054d55ed154bd448e38ebef30a6c9a4134",
+    "metrics.py": "f5c5d5ed309352c4b3199402b74d9ef9032391ade98e2ef3badbbb4de36d073f",
+    "network.py": "4132a71019fcd794eacd97450ad7632aca7c815837bb5150494466d74739a1ac",
+    "observation.py": "f87fa90e8b46d99193d8d996244c225e0a417bd77367ebdad6ee351631daeafa",
+    "project_environment.py": "c0a1fc33e67f29d7d2ad1975b2b1510d06b58e4b27b2ab85fa352a3bbadc8153",
+    "replay_buffer.py": "e6a9ab3933183a51fae7421842f3c3f03bc6050953f9b6fadc3c4b78cf104de9",
+    "reward.py": "22bf3d0548f6d2c8a4bffe956bf3fc6233f371c4febe679d51919c51931ca462",
+    "scenarios.py": "f08f8e73e22934b1dbf1d120740d64c876a8dbf0294a9279fdb1b98e39d70919",
+    "train.py": "ebdb959d34a558e9d94dc2ee2d7276fab2b7de651e3a3acee66343a73b69a772",
+    "validation.py": "0dd386af8bc6072a1af820be73575e239b0419cf9af218961ed9e212475eee72"
+  },
+  "integrated_source_hashes": {
+    "config.py": "68eb0576362af433c8f165755cdce68c92bc9bef1b5ceb52826e4060b5a238a5",
+    "environment.py": "8ff9e75afa6e0668e5417317325f6c3658b073ee8185cd269f315b2b32ff7dec",
+    "project_environment.py": "c0a1fc33e67f29d7d2ad1975b2b1510d06b58e4b27b2ab85fa352a3bbadc8153",
+    "joint_actions.py": "a52f451e28bf3c1dd653bec802d3bd054d55ed154bd448e38ebef30a6c9a4134",
+    "observation.py": "f87fa90e8b46d99193d8d996244c225e0a417bd77367ebdad6ee351631daeafa",
+    "reward.py": "22bf3d0548f6d2c8a4bffe956bf3fc6233f371c4febe679d51919c51931ca462",
+    "network.py": "4aaa48059d4559e0c1412bba71b25304b626444920b07e1a78b5196b19fbc620",
+    "agent.py": "de028923e65dea6264c9729c60f165c7518b19c17b1c2a9757737d0b6deab3da",
+    "replay_buffer.py": "e6a9ab3933183a51fae7421842f3c3f03bc6050953f9b6fadc3c4b78cf104de9",
+    "scenarios.py": "f08f8e73e22934b1dbf1d120740d64c876a8dbf0294a9279fdb1b98e39d70919",
+    "metrics.py": "f5c5d5ed309352c4b3199402b74d9ef9032391ade98e2ef3badbbb4de36d073f",
+    "validation.py": "0dd386af8bc6072a1af820be73575e239b0419cf9af218961ed9e212475eee72",
+    "checkpoints.py": "2b18a744a087cefd8f9ce08f141c644b93990c705d997c62b0978b43e3142600",
+    "train.py": "ebdb959d34a558e9d94dc2ee2d7276fab2b7de651e3a3acee66343a73b69a772",
+    "highway_m1/__init__.py": "3da4a47584cef722e0d959efc34ee69554090e5e3e193c41da94f6ce7691cfb7",
+    "highway_m1/schema.py": "b12afafa4b68de1c09994cf8d674819246f7d7c818ce606ddb6ae75b0b2eb2e4",
+    "highway_m2/__init__.py": "6b740d30ce19929b755938bec32ceb6eb4cf086d79a3c76397f87a7e971c4aff",
+    "highway_m2/network.py": "c6dcf669d572d2055df2228a4b7a718eba7a82834ccad0e159ce859a1c116b46",
+    "legacy_checkpoint.py": "cac10b6ebdc9698725f201041e2dcbcd1ed8baae55d9333532edf6173b877e75"
+  },
+  "scope": "Explicit legacy inference only; identical layers.* keys. Original checkout required for unchanged formal resume protocol."
+}

@@ -2,7 +2,7 @@
 
 基于 HighwayEnv、Gymnasium 和 PyTorch 的课程项目：在三车道高速公路上，用普通 DQN 同时选择换道方向与目标速度。项目围绕 **Environment / Neural Network / Learning Agent** 三个模块组织。
 
-当前代码已包含真实环境、34 维观测、九个联合动作、项目奖励和自行实现的 DQN。本次实际重跑全套测试结果为 **167 通过、0 失败、0 跳过**；三个正式种子的训练尚未全部完成。详情见 [当前进度](docs/progress.md)、[项目规格](docs/project_spec.md)和[训练协议](docs/training_protocol.md)。本次仓库/提交包整理不继续正式训练。
+当前代码已包含真实环境、34 维观测、九个联合动作、项目奖励和自行实现的 DQN。队友代码整合后实际全套测试为 **187 通过、0 失败、0 跳过**；三个正式种子的训练尚未全部完成。M2 网络已接入 DQN，M1 的演示策略、叠图和离屏渲染已复用；正式环境和冻结协议保持原样。详情见 [整合与兼容记录](docs/teammate_code_integration.md)、[当前进度](docs/progress.md)、[项目规格](docs/project_spec.md)和[训练协议](docs/training_protocol.md)。本轮只执行独立短程 smoke，没有继续正式训练。
 
 ## 1. Project Overview
 
@@ -94,6 +94,8 @@ Linear(34, 128, bias=True) → ReLU
 ```
 
 参数量为 **22,153**：`34*128+128 + 128*128+128 + 128*9+9`。输入是与网络参数同 dtype/device 的 `torch.Tensor`，默认 CPU/float32；支持 `[34]→[9]` 与 `[B,34]→[B,9]`。
+
+当前 `DQNNetwork` 通过薄继承接口调用队友 `highway_m2.QNetwork`；六个权重键、初始化顺序及数值行为与整合前等价，未在训练主流程保留第二套网络。
 
 九个输出是按固定动作编号排列的原始 Q 值，无 Softmax/Sigmoid。网络只做前向计算，掩码、探索、环境交互和优化由 Learning Agent 负责。见[网络设计](docs/network_design.md)。
 
@@ -193,16 +195,16 @@ python network_demo.py --help
 python train.py --help
 ```
 
-现有 167 项测试涵盖配置、真实 stock/联合控制/34 维观测、奖励与正式环境，网络数值与保存加载，以及回放、掩码、手算 TD、终止/截断区别、场景随机化、独立验证、checkpoint 和边界恢复。
+保留的原有 167 项测试涵盖配置、真实 stock/联合控制/34 维观测、奖励与正式环境，网络数值与保存加载，以及回放、掩码、手算 TD、终止/截断区别、场景随机化、独立验证、checkpoint 和边界恢复。
 
-本次源码全套执行结果为 **167 通过、0 失败、0 跳过**；真实恢复测试对比连续运行与回合边界恢复后的权重和学习状态。测试通过不等于训练收敛。缺依赖导致的跳过必须记为“未验证”，不能并入通过数量。本次源码重跑 44.414 秒，独立 ZIP 解压测试 42.196 秒，均为 167 通过、0 失败、0 跳过。1004 步演示确实执行两次参数更新，详情见[交付记录](docs/delivery_validation.md)。
+本轮整合前实测 167 项通过（43.025 秒），新增 20 项兼容/真实仿真测试后 **187 通过、0 失败、0 跳过**（37.775 秒）。真实恢复测试仍对比连续运行与回合边界恢复后的权重和学习状态；新增测试核对 M2 与旧网络输出/梯度/更新等价及 M1 诊断接口。独立 1004 步 smoke 实际执行 2 次优化并可重载。测试通过不等于训练收敛。队友原 pytest 测试因缺 pytest 未执行，不能并入通过数；详细边界见[整合记录](docs/teammate_code_integration.md)。以前的 167 项源码/ZIP 交付检查是历史记录，见[交付记录](docs/delivery_validation.md)。
 
 ## 12. Current Progress
 
 | 项目 | 已记录状态 |
 | --- | --- |
 | 正式环境、Q 网络、普通 DQN 和训练/验证代码 | 已实现 |
-| 原有全套测试 | 167 通过，0 失败，0 跳过 |
+| 整合后全套测试（保留原有 167 项） | 187 通过，0 失败，0 跳过 |
 | smoke / pilot | 2,000 步 / 20,000 步完成 |
 | formal seed 11 | 50,000 步、12,251 次更新完成 |
 | formal seed 22 | 50,000 步、12,251 次更新完成 |
@@ -234,3 +236,15 @@ seed 33 的历史 `status.json` 最后写入 `running`，不能当作当前仍�
 代码、测试、排错和文档使用过 AI 辅助生成及审查。团队应阅读、理解并人工核对实现，按实际情况记录每位成员的贡献，并依据课程要求披露 AI 使用；仓库没有编造成员身份、贡献比例或课程合规结论。HighwayEnv/Gymnasium/PyTorch 的功能归第三方实现，不计为本项目自行编写的学习核心。协作约定见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 本次 Learning Agent C&R 的英文报告源稿见 [报告](docs/learning_agent_cr_report.md)，解压运行说明见 [提交包 README](docs/learning_agent_submission_README.md)，交付核验见 [交付记录](docs/delivery_validation.md)。PDF 生成脚本位于 `tools/build_learning_agent_report.py`，使用独立文档工具环境中的 ReportLab 和 Linux Liberation Sans 字体；不属于 DQN 运行依赖。ZIP 打包脚本 `tools/build_learning_agent_submission.py` 按明确清单打包并核对指定 Git 提交，不打包训练产物。
+
+## 15. Teammate Integration
+
+来源和 22 个导入文件的哈希见 [队友代码](teammates/README.md)。M1 的 34 维排列与九动作编号相同，但速度归一化、奖励和加速度限幅不同；它作为独立诊断环境保留，未替换冻结正式环境。新展示入口默认连接正式环境并复用 M1 的策略/叠图，保存 PNG，无需视频编码依赖：
+
+```bash
+SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python teammate_demo.py \
+  --environment project --policy random --seed 25 --steps 20 \
+  --output /tmp/me5418-teammate-demo-new.png
+```
+
+输出必须是尚不存在的文件。这是演示策略，不是训练模型性能。三个种子的 9 份旧 checkpoint 在线权重均通过 15 条真实观测的 Q 等价检查；原训练文件哈希保持不变。由于源码签名改变，旧 best/last 需显式调用 `legacy_checkpoint.load_legacy_inference`，旧 resume 继续使用原冻结代码和协议；不静默兼容恢复、不重写文件。完整命令、兼容条件、测试证据及 Stage 4 尚缺事项见 [整合记录](docs/teammate_code_integration.md)。

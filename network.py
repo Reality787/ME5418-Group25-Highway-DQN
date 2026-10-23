@@ -7,12 +7,12 @@
 from __future__ import annotations
 
 import torch
-from torch import nn
+from highway_m2 import QNetwork
 
 import config
 
 
-class DQNNetwork(nn.Module):
+class DQNNetwork(QNetwork):
     """34 → 128 → 128 → 9；隐藏层 ReLU，输出层没有激活函数。
 
     输入必须是 torch.Tensor，形状为 [34] 或 [B,34]（B>=1）。
@@ -23,19 +23,17 @@ class DQNNetwork(nn.Module):
     """
 
     def __init__(self) -> None:
-        super().__init__()
-        self.input_dim = config.NETWORK_INPUT_DIM
-        self.output_dim = config.NETWORK_OUTPUT_DIM
-        first_hidden, second_hidden = config.HIDDEN_LAYER_SIZES
-        # 显式使用 float32 CPU；不受调用方全局默认 dtype/device 的意外影响。
-        options = {"bias": True, "dtype": torch.float32, "device": "cpu"}
-        self.layers = nn.Sequential(
-            nn.Linear(self.input_dim, first_hidden, **options),
-            nn.ReLU(),
-            nn.Linear(first_hidden, second_hidden, **options),
-            nn.ReLU(),
-            nn.Linear(second_hidden, self.output_dim, **options),
+        super().__init__(
+            observation_dim=config.NETWORK_INPUT_DIM,
+            action_dim=config.NETWORK_OUTPUT_DIM,
+            hidden_sizes=config.HIDDEN_LAYER_SIZES,
+            device="cpu", dtype=torch.float32,
         )
+        self.input_dim = self.observation_dim
+        self.output_dim = self.action_dim
+        # M1/M2 的历史特征命名不能冒充正式项目 schema。
+        self.observation_names = tuple(config.OBSERVATION_FEATURE_NAMES)
+        self.action_names = tuple(config.ACTION_NAMES.values())
 
     def forward(self, observation: torch.Tensor) -> torch.Tensor:
         """返回 [9] 或 [B,9] 的原始 Q 值；不修改输入或断开梯度。"""
@@ -58,4 +56,4 @@ class DQNNetwork(nn.Module):
                 f"observation device 必须与模型一致：{parameter.device}；实际为 {observation.device}"
             )
         # Linear/ReLU 均非原地操作；不转 NumPy、不 detach、不移动设备。
-        return self.layers(observation)
+        return super().forward(observation)
